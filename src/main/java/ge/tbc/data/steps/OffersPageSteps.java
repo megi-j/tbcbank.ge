@@ -20,5 +20,12 @@ public class OffersPageSteps extends OffersPage {
         Assert.assertTrue(offersListContainer.isVisible());
         return this;
     }
-
+    public OffersPageSteps mastercardCheck(){
+        mastercard.check();
+        return this;
+    }
+    public OffersPageSteps shoppingCheck(){
+        shopping.check();
+        return this;
+    }
 }

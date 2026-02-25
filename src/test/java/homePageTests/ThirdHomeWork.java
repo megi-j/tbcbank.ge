@@ -20,4 +20,10 @@ public class ThirdHomeWork extends BaseTest {
                 .offersListContainerCheck();
 
     }
+    @Test
+    public void cardTypeCheck(){
+        offersPageSteps.mastercardCheck()
+                .shoppingCheck();
+
+    }
 }
