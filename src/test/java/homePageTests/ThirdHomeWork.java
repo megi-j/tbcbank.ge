@@ -23,7 +23,8 @@ public class ThirdHomeWork extends BaseTest {
     @Test
     public void cardTypeCheck(){
         offersPageSteps.mastercardCheck()
-                .shoppingCheck();
+                .shoppingCheck()
+                .emptyOffersPageCheck();
 
     }
 }

@@ -4,6 +4,8 @@ import com.microsoft.playwright.Page;
 import ge.tbc.data.pages.OffersPage;
 import org.testng.Assert;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
 public class OffersPageSteps extends OffersPage {
     private final Page page;
 
@@ -26,6 +28,10 @@ public class OffersPageSteps extends OffersPage {
     }
     public OffersPageSteps shoppingCheck(){
         shopping.check();
+        return this;
+    }
+    public OffersPageSteps emptyOffersPageCheck(){
+        assertThat(emptyOffersPage).isVisible();
         return this;
     }
 }
