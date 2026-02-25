@@ -34,4 +34,8 @@ public class OffersPageSteps extends OffersPage {
         assertThat(emptyOffersPage).isVisible();
         return this;
     }
+    public OffersPageSteps cardsVisibilityCheck(){
+        assertThat(offerCards).hasCount(0);
+        return this;
+    }
 }

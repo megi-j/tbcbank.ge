@@ -24,7 +24,8 @@ public class ThirdHomeWork extends BaseTest {
     public void cardTypeCheck(){
         offersPageSteps.mastercardCheck()
                 .shoppingCheck()
-                .emptyOffersPageCheck();
+                .emptyOffersPageCheck()
+                .cardsVisibilityCheck();
 
     }
 }
