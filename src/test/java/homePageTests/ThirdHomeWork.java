@@ -25,7 +25,12 @@ public class ThirdHomeWork extends BaseTest {
         offersPageSteps.mastercardCheck()
                 .shoppingCheck()
                 .emptyOffersPageCheck()
-                .cardsVisibilityCheck();
+                .cardsVisibilityCheck()
+                .categoryClearButtonVisibility()
+                .productTypeClearButtonVisibility()
+                .offerTypeClearButtonVisibility()
+                .cardTypeClearButtonVisibility();
 
     }
+
 }

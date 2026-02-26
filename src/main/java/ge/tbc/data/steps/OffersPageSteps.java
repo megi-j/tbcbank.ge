@@ -38,4 +38,73 @@ public class OffersPageSteps extends OffersPage {
         assertThat(offerCards).hasCount(0);
         return this;
     }
+    public boolean isAnyCategorySelected(){
+        for(int i = 0; i < categoryList.count(); i++){
+            if(categoryList.nth(i).isChecked()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public OffersPageSteps categoryClearButtonVisibility(){
+        boolean anyChecked = isAnyCategorySelected();
+        if(anyChecked){
+            assertThat(categoryClearButton).isVisible();
+        } else {
+            assertThat(categoryClearButton).not().isVisible();
+        }
+        return this;
+    }
+    public boolean isAnyProductTypeSelected(){
+        for(int i = 0; i < productTypeList.count(); i++){
+            if(productTypeList.nth(i).isChecked()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public OffersPageSteps productTypeClearButtonVisibility(){
+        boolean anyChecked = isAnyProductTypeSelected();
+        if(anyChecked){
+            assertThat(productTypeClearButton).isVisible();
+        }else{
+            assertThat(productTypeClearButton).not().isVisible();
+        }
+        return this;
+    }
+    public boolean isAnyOfferTypeSelected(){
+        for(int i = 0; i < offerTypeList.count(); i++){
+            if(offerTypeList.nth(i).isChecked()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public OffersPageSteps offerTypeClearButtonVisibility(){
+        boolean anyChecked = isAnyOfferTypeSelected();
+        if(anyChecked){
+            assertThat(offerTypeClearButton).isVisible();
+        }else{
+            assertThat(offerTypeClearButton).not().isVisible();
+        }
+        return this;
+    }
+    public boolean isAnyCardTypeSelected(){
+        for(int i = 0; i < cardTypeList.count(); i++){
+            if(cardTypeList.nth(i).isChecked()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public OffersPageSteps cardTypeClearButtonVisibility(){
+        boolean anyChecked = isAnyCardTypeSelected();
+        if(anyChecked){
+            assertThat(cardTypeClearButton).isVisible();
+        }else{
+            assertThat(categoryClearButton).not().isVisible();
+        }
+        return this;
+
+    }
 }
