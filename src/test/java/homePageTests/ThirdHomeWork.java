@@ -29,8 +29,11 @@ public class ThirdHomeWork extends BaseTest {
                 .categoryClearButtonVisibility()
                 .productTypeClearButtonVisibility()
                 .offerTypeClearButtonVisibility()
-                .cardTypeClearButtonVisibility();
-
+                .cardTypeClearButtonVisibility()
+                .resetCategoryFilter()
+                .resetProductFilter()
+                .resetOfferFilter()
+                .resetCardFilter()
+                .offerCardsVisibilityCheckAfterReset();
     }
-
 }

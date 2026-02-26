@@ -105,6 +105,37 @@ public class OffersPageSteps extends OffersPage {
             assertThat(categoryClearButton).not().isVisible();
         }
         return this;
-
+    }
+    public OffersPageSteps resetCategoryFilter(){
+        boolean anyChecked = isAnyCategorySelected();
+        if(anyChecked){
+            categoryClearButton.click();
+        }
+        return this;
+    }
+    public OffersPageSteps resetProductFilter(){
+        boolean anyChecked = isAnyProductTypeSelected();
+        if(anyChecked){
+            productTypeClearButton.click();
+        }
+        return this;
+    }
+    public OffersPageSteps resetOfferFilter(){
+        boolean anyChecked = isAnyOfferTypeSelected();
+        if(anyChecked){
+            offerTypeClearButton.click();
+        }
+        return this;
+    }
+    public OffersPageSteps resetCardFilter(){
+        boolean anyChecked = isAnyCardTypeSelected();
+        if(anyChecked){
+            cardTypeClearButton.click();
+        }
+        return this;
+    }
+    public OffersPageSteps offerCardsVisibilityCheckAfterReset(){
+        assertThat(offerCards).isVisible();
+        return this;
     }
 }
