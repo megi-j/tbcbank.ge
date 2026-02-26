@@ -32,7 +32,7 @@ public class BaseTest {
 
         page = context.newPage();  //ახალი ტაბი
         page.navigate(
-                Constants.OFFERS_URS,
+                Constants.BASE_URL,
                 new Page.NavigateOptions()
                         .setTimeout(60_000)    //აქ ტესტი ელოდება 60 წმ გვერდის ჩატვირთვას ,რო გაეშვას
                         .setWaitUntil(WaitUntilState.LOAD)  //სანამ გვერდი ბოლომდე არ ჩაიტვირთება მანამდე დაელოდება

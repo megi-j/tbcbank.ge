@@ -4,6 +4,8 @@ import com.microsoft.playwright.Page;
 import ge.tbc.data.pages.OffersPage;
 import org.testng.Assert;
 
+import java.security.PublicKey;
+
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class OffersPageSteps extends OffersPage {
@@ -12,6 +14,12 @@ public class OffersPageSteps extends OffersPage {
     public OffersPageSteps (Page page){
         super(page);
         this.page = page;
+    }
+    public OffersPageSteps moveToOffersPage(){
+        forMeButton.hover();
+        offers.click();
+        readMore.click();
+        return this;
     }
     public OffersPageSteps filterPanelCheck(){
         filterPanel.waitFor();
