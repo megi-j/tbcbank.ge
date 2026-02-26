@@ -8,10 +8,10 @@ public class OffersPage {
 
      public OffersPage(Page page){
          this.filterPanel = page.locator("h3:has-text('კატეგორია')");
-         this.offersListContainer = page.locator("xpath=/html/body/app-base/app-root/div[2]/app-page/app-offers/app-marketing-main/div/div/tbcx-pw-container/div/div/div/app-marketing-list");
-         this.mastercard = page.locator("xpath=/html/body/app-base/app-root/div[2]/app-page/app-offers/app-marketing-main/div/div/tbcx-pw-container/div/div/div/app-marketing-filters/div/app-marketing-filter-group[4]/div/ul/app-marketing-filter-item[2]/div/div/input");
-         this.shopping = page.locator("xpath=/html/body/app-base/app-root/div[2]/app-page/app-offers/app-marketing-main/div/div/tbcx-pw-container/div/div/div/app-marketing-filters/div/app-marketing-filter-group[1]/div/ul/app-marketing-filter-item[1]/div/div/input");
-         this.emptyOffersPage = page.locator("xpath=/html/body/app-base/app-root/div[2]/app-page/app-offers/app-marketing-main/div/div/tbcx-pw-container/div/div/div/app-marketing-list/app-marketing-items-empty-state/div/h3");
+         this.offersListContainer = page.locator("div.marketing__cards-list.ng-star-inserted");
+         this.mastercard = page.locator("app-marketing-filter-item:has-text('მასტერქარდი') input[type='checkbox']");
+         this.shopping = page.locator("app-marketing-filter-item:has-text('შოპინგი') input[type='checkbox']");
+         this.emptyOffersPage = page.locator("div.offers__empty-state h3:has-text('შეთავაზებები არ მოიძებნა')");
          this.offerCards = page.locator(".marketing__cards-list ng-star-inserted");
      }
 

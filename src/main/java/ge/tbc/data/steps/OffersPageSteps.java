@@ -15,11 +15,11 @@ public class OffersPageSteps extends OffersPage {
     }
     public OffersPageSteps filterPanelCheck(){
         filterPanel.waitFor();
-        Assert.assertTrue(filterPanel.isVisible());
+        assertThat(filterPanel).isVisible();
         return this;
     }
     public OffersPageSteps offersListContainerCheck(){
-        Assert.assertTrue(offersListContainer.isVisible());
+        assertThat(offersListContainer).isVisible();
         return this;
     }
     public OffersPageSteps mastercardCheck(){
