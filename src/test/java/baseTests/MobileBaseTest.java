@@ -6,9 +6,8 @@ import ge.tbc.data.Constants;
 import org.testng.annotations.BeforeClass;
 
 import java.util.List;
-// გვერდის გახსნა მაქვს ცალკე გატანილი, ანუ ცალკე ფოლდერად baseTest
-public class BaseTest {
-    //ესენი იმისთვის რომ გაიხსნას გვერდი
+
+public class MobileBaseTest {
     protected Playwright playwright;
     protected Browser browser;
     protected BrowserContext context;
@@ -27,7 +26,7 @@ public class BaseTest {
         );
 
         context = browser.newContext(
-                new Browser.NewContextOptions().setViewportSize(null)   //გამოიყენოს რეალური window ზომა და არა დეფაულტად რომელიმე ზომა
+                new Browser.NewContextOptions().setViewportSize(400,707)   //გამოიყენოს რეალური window ზომა და არა დეფაულტად რომელიმე ზომა
         );
 
         page = context.newPage();  //ახალი ტაბი
@@ -39,11 +38,10 @@ public class BaseTest {
         );
 
     }
+
     //ეს ფუნქცია მიახვედრებს რომელ გვერძე ხდება ეს ყველაფერი, ტესტის გაშვებისას მე რომ სხვა გვერძე გადავიდე,
     //ეს ჩემმა ტესტმა მაინც იქ უნდა გააგრძელოს გატესტვა სადაც მივუთითებ და ამას აკეთებს ეს ფუნქცია
     protected Page getPage() {
-
-        return page;             //მაძლევს page ობიექტს სხვა კლასებში გამოსაყენებლად
+        return page;
     }
 }
-
