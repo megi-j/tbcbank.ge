@@ -1,6 +1,7 @@
 package baseTests;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.Geolocation;
 import com.microsoft.playwright.options.WaitUntilState;
 import ge.tbc.data.Constants;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +27,10 @@ public class MobileBaseTest {
         );
 
         context = browser.newContext(
-                new Browser.NewContextOptions().setViewportSize(400,707)   //გამოიყენოს რეალური window ზომა და არა დეფაულტად რომელიმე ზომა
+                new Browser.NewContextOptions()
+                        .setViewportSize(400,707)//გამოიყენოს რეალური window ზომა და არა დეფაულტად რომელიმე ზომა
+                        .setPermissions(List.of("geolocation"))
+                        .setGeolocation(new Geolocation(41.7151, 44.8271))
         );
 
         page = context.newPage();  //ახალი ტაბი

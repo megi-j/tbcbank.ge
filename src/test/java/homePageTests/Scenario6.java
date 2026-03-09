@@ -1,7 +1,6 @@
 package homePageTests;
 
 import baseTests.MobileBaseTest;
-import ge.tbc.data.steps.LoansPageSteps;
 import ge.tbc.data.steps.LocationsPageSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
