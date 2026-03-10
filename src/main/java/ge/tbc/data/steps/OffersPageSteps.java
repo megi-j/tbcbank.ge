@@ -1,10 +1,9 @@
 package ge.tbc.data.steps;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ge.tbc.data.pages.OffersPage;
-import org.testng.Assert;
 
-import java.security.PublicKey;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -46,16 +45,17 @@ public class OffersPageSteps extends OffersPage {
         assertThat(offerCards).hasCount(0);
         return this;
     }
-    public boolean isAnyCategorySelected(){
-        for(int i = 0; i < categoryList.count(); i++){
-            if(categoryList.nth(i).isChecked()){
-                return true;
+
+    public boolean isAnySelected(Locator list){
+        for(int i = 0; i < list.count(); i++){
+            if(list.nth(i).isChecked()){
+               return true;
             }
         }
-        return false;
+         return false;
     }
     public OffersPageSteps categoryClearButtonVisibility(){
-        boolean anyChecked = isAnyCategorySelected();
+        boolean anyChecked = isAnySelected(categoryList);
         if(anyChecked){
             assertThat(categoryClearButton).isVisible();
         } else {
@@ -63,16 +63,8 @@ public class OffersPageSteps extends OffersPage {
         }
         return this;
     }
-    public boolean isAnyProductTypeSelected(){
-        for(int i = 0; i < productTypeList.count(); i++){
-            if(productTypeList.nth(i).isChecked()){
-                return true;
-            }
-        }
-        return false;
-    }
     public OffersPageSteps productTypeClearButtonVisibility(){
-        boolean anyChecked = isAnyProductTypeSelected();
+        boolean anyChecked = isAnySelected(productTypeList);
         if(anyChecked){
             assertThat(productTypeClearButton).isVisible();
         }else{
@@ -80,16 +72,9 @@ public class OffersPageSteps extends OffersPage {
         }
         return this;
     }
-    public boolean isAnyOfferTypeSelected(){
-        for(int i = 0; i < offerTypeList.count(); i++){
-            if(offerTypeList.nth(i).isChecked()){
-                return true;
-            }
-        }
-        return false;
-    }
+
     public OffersPageSteps offerTypeClearButtonVisibility(){
-        boolean anyChecked = isAnyOfferTypeSelected();
+        boolean anyChecked = isAnySelected(offerTypeList);
         if(anyChecked){
             assertThat(offerTypeClearButton).isVisible();
         }else{
@@ -97,50 +82,38 @@ public class OffersPageSteps extends OffersPage {
         }
         return this;
     }
-    public boolean isAnyCardTypeSelected(){
-        for(int i = 0; i < cardTypeList.count(); i++){
-            if(cardTypeList.nth(i).isChecked()){
-                return true;
-            }
-        }
-        return false;
-    }
+
     public OffersPageSteps cardTypeClearButtonVisibility(){
-        boolean anyChecked = isAnyCardTypeSelected();
+        boolean anyChecked = isAnySelected(cardTypeList);
         if(anyChecked){
             assertThat(cardTypeClearButton).isVisible();
         }else{
-            assertThat(categoryClearButton).not().isVisible();
+            assertThat(cardTypeClearButton).not().isVisible();
+        }
+        return this;
+    }
+    public OffersPageSteps resetFilter(Locator list, Locator clearButton){
+        boolean anyChecked = isAnySelected(list);
+
+        if(anyChecked){
+            clearButton.click();
         }
         return this;
     }
     public OffersPageSteps resetCategoryFilter(){
-        boolean anyChecked = isAnyCategorySelected();
-        if(anyChecked){
-            categoryClearButton.click();
-        }
-        return this;
+        return resetFilter(categoryList, categoryClearButton);
     }
-    public OffersPageSteps resetProductFilter(){
-        boolean anyChecked = isAnyProductTypeSelected();
-        if(anyChecked){
-            productTypeClearButton.click();
-        }
-        return this;
+
+    public OffersPageSteps resetProductTypeFilter(){
+        return resetFilter(productTypeList, productTypeClearButton);
     }
-    public OffersPageSteps resetOfferFilter(){
-        boolean anyChecked = isAnyOfferTypeSelected();
-        if(anyChecked){
-            offerTypeClearButton.click();
-        }
-        return this;
+
+    public OffersPageSteps resetOfferTypeFilter(){
+        return resetFilter(offerTypeList, offerTypeClearButton);
     }
-    public OffersPageSteps resetCardFilter(){
-        boolean anyChecked = isAnyCardTypeSelected();
-        if(anyChecked){
-            cardTypeClearButton.click();
-        }
-        return this;
+
+    public OffersPageSteps resetCardTypeFilter(){
+        return resetFilter(cardTypeList, cardTypeClearButton);
     }
     public OffersPageSteps offerCardsVisibilityCheckAfterReset(){
         assertThat(offerCards).isVisible();

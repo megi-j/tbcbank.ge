@@ -31,9 +31,9 @@ public class Scenario4 extends BaseTest {
                 .offerTypeClearButtonVisibility()
                 .cardTypeClearButtonVisibility()
                 .resetCategoryFilter()
-                .resetProductFilter()
-                .resetOfferFilter()
-                .resetCardFilter()
+                .resetProductTypeFilter()
+                .resetOfferTypeFilter()
+                .resetCardTypeFilter()
                 .offerCardsVisibilityCheckAfterReset();
     }
 }
