@@ -14,8 +14,12 @@ public class Scenario5 extends BaseTest {
         loansPageSteps.moveToLoansPage();
     }
     @Test(priority = 1)
-    public void applyCheck(){
-        loansPageSteps.applyButtonCheck()
-                .validateRedirectToTbccredit();
+    public void showApplyButton(){
+        loansPageSteps.applyButtonCheck();
+
+    }
+    @Test(priority = 2)
+    public void redirectToTbccredit(){
+        loansPageSteps.validateRedirectToTbccredit();
     }
 }
