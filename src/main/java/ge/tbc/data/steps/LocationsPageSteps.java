@@ -5,8 +5,6 @@ import com.microsoft.playwright.Page;
 import ge.tbc.data.pages.LocationsPage;
 import org.testng.Assert;
 
-import java.security.PublicKey;
-
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static ge.tbc.data.Constants.LOCATIONS_URL;
 import static org.testng.AssertJUnit.assertFalse;

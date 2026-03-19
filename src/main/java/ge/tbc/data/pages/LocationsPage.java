@@ -2,7 +2,7 @@ package ge.tbc.data.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
+
 
 public class LocationsPage {
     public Locator hamburgerMenu, locationsButton, header, atmTab, atmCard, branchTab, branchCard, tabMenu,

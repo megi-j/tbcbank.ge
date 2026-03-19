@@ -33,8 +33,8 @@ public class OffersPageSteps extends OffersPage {
         mastercard.check();
         return this;
     }
-    public OffersPageSteps shoppingCheck(){
-        shopping.check();
+    public OffersPageSteps transportCheck(){
+        transport.check();
         return this;
     }
     public OffersPageSteps emptyOffersPageCheck(){
@@ -101,18 +101,22 @@ public class OffersPageSteps extends OffersPage {
         return this;
     }
     public OffersPageSteps resetCategoryFilter(){
+
         return resetFilter(categoryList, categoryClearButton);
     }
 
     public OffersPageSteps resetProductTypeFilter(){
+
         return resetFilter(productTypeList, productTypeClearButton);
     }
 
     public OffersPageSteps resetOfferTypeFilter(){
+
         return resetFilter(offerTypeList, offerTypeClearButton);
     }
 
     public OffersPageSteps resetCardTypeFilter(){
+
         return resetFilter(cardTypeList, cardTypeClearButton);
     }
     public OffersPageSteps offerCardsVisibilityCheckAfterReset(){

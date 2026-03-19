@@ -2,7 +2,6 @@ package homePageTests;
 
 import baseTests.BaseTest;
 import ge.tbc.data.steps.LoansPageSteps;
-import ge.tbc.data.steps.OffersPageSteps;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

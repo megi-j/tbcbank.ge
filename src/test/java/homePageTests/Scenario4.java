@@ -18,19 +18,25 @@ public class Scenario4 extends BaseTest {
     public void checkFilterPanelVisibility(){
         offersPageSteps.filterPanelCheck()
                 .offersListContainerCheck();
-
     }
+
     @Test(priority = 2)
-    public void cardTypeCheck(){
+    public void showEmptyOffersPage(){
         offersPageSteps.mastercardCheck()
-                .shoppingCheck()
+                .transportCheck()
                 .emptyOffersPageCheck()
-                .cardsVisibilityCheck()
-                .categoryClearButtonVisibility()
+                .cardsVisibilityCheck();
+    }
+    @Test(priority = 3)
+    public void showClearButton(){
+        offersPageSteps.categoryClearButtonVisibility()
                 .productTypeClearButtonVisibility()
                 .offerTypeClearButtonVisibility()
-                .cardTypeClearButtonVisibility()
-                .resetCategoryFilter()
+                .cardTypeClearButtonVisibility();
+    }
+    @Test(priority = 4)
+    public void resetAllFilters(){
+        offersPageSteps.resetCategoryFilter()
                 .resetProductTypeFilter()
                 .resetOfferTypeFilter()
                 .resetCardTypeFilter()

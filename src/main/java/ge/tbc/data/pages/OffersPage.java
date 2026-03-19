@@ -4,7 +4,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class OffersPage {
-     public Locator forMeButton, offers, readMore, filterPanel, offersListContainer, mastercard, shopping, emptyOffersPage, offerCards,
+     public Locator forMeButton, offers, readMore, filterPanel, offersListContainer, mastercard, transport, emptyOffersPage, offerCards,
                     categoryClearButton, categoryList, productTypeClearButton, productTypeList, offerTypeClearButton,
                     offerTypeList, cardTypeClearButton, cardTypeList;
 
@@ -15,7 +15,7 @@ public class OffersPage {
          this.filterPanel = page.locator("h3:has-text('კატეგორია')");
          this.offersListContainer = page.locator("div.marketing__cards-list.ng-star-inserted");
          this.mastercard = page.locator("app-marketing-filter-item:has-text('მასტერქარდი') input[type='checkbox']");
-         this.shopping = page.locator("app-marketing-filter-item:has-text('შოპინგი') input[type='checkbox']");
+         this.transport = page.locator("app-marketing-filter-item:has-text('ტრანსპორტი') input[type='checkbox']");
          this.emptyOffersPage = page.locator("div.offers__empty-state h3:has-text('შეთავაზებები არ მოიძებნა')");
          this.offerCards = page.locator(".marketing__cards-list.ng-star-inserted");
          this.categoryClearButton = page.locator("app-marketing-filter-group:has-text('კატეგორია') button.filter__button");
